@@ -1,0 +1,320 @@
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+
+/* --- 7. Box Sizing --- */
+* {
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+}
+
+/* --- 2. Element Selector & 5. Inheritance --- */
+body {
+    /* 6. Fonts */
+    font-family: 'Poppins', sans-serif; /* Inherited by child elements */
+    font-size: 16px;
+    font-weight: 400;
+    /* 6. Text */
+    line-height: 1.6;
+    
+    /* 6. Colors */
+    color: #2c2c2c; /* HEX color */
+    background-color: #faf3e0; /* HEX color */
+    
+    margin: 0;
+    padding: 0;
+}
+
+/* --- 2. Grouping Selector --- */
+h1, h2, h3, h4 {
+    margin-top: 0;
+    color: #1a1a1a;
+}
+
+/* --- 2. Class Selector --- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header & Nav --- */
+header {
+    background-color: white; /* 6. Named color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e67e22; /* Warm orange */
+    text-decoration: none;
+}
+
+/* --- 2. Descendant Selector --- */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none; /* 6. Text decoration */
+    color: #2c2c2c;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+/* --- 3. Pseudo-classes (:hover) --- */
+nav a:hover {
+    color: #e67e22;
+}
+
+/* --- 11. Display Properties Demonstrations --- */
+.block-elem {
+    /* Display Block: Takes full width available, starts on a new line */
+    display: block; 
+    margin-bottom: 10px;
+}
+
+.inline-elem {
+    /* Display Inline: Takes only necessary width, ignores top/bottom margins & height */
+    display: inline; 
+    font-style: italic; /* 6. Font style */
+}
+
+.inline-block-elem {
+    /* Display Inline-Block: Sits inline but respects width, height, and margins */
+    display: inline-block; 
+    padding: 10px 24px;
+    background-color: #e67e22;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.inline-block-elem:hover {
+    background-color: #d35400;
+}
+
+.hidden-elem {
+    /* Display None: Completely removes element from the layout flow */
+    display: none; 
+}
+
+/* --- Sections Spacing --- */
+section {
+    padding: 100px 0;
+}
+
+/* --- 2. ID Selector --- */
+#menu {
+    background-color: #f5f5f5;
+}
+
+.section-title {
+    text-align: center; /* 6. Text align */
+    font-size: 36px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* --- 4. Pseudo-elements (::before and ::after) --- */
+#menu h2::before {
+    content: "🍽 ";
+    color: #e67e22;
+}
+#menu h2::after {
+    content: " ★";
+    color: #e67e22;
+}
+
+/* --- 5. Cascade Demonstration --- */
+/* The second rule overrides the first because it appears later in the source code (source order) */
+.cascade-demo {
+    color: blue; /* Loses */
+}
+.cascade-demo {
+    color: #7f8c8d; /* WINS */
+}
+
+/* --- 5. Specificity Demonstration --- */
+/* The ID selector (#specific-btn) is more specific than the class selector (.btn-override) */
+.btn-override {
+    background-color: red; /* Loses */
+}
+#specific-btn {
+    background-color: rgb(230, 126, 34); /* 6. RGB Color - WINS! */
+}
+#specific-btn:hover {
+    background-color: rgb(211, 84, 0); 
+}
+
+/* --- Menu Grid --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* --- 7. Box Model & 12. Borders, Shadows --- */
+.food-card {
+    /* Content */
+    width: 100%;                  
+    height: 100%;                 
+    /* Padding (Space inside border) */
+    padding: 20px;                
+    /* Border */
+    border: 1px solid #ddd;       
+    border-radius: 12px;
+    /* Margin (Space outside border) */
+    margin: 0;                    
+    
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* --- 3. Pseudo-classes (:first-child) --- */
+.menu-grid .food-card:first-child {
+    border: 2px solid #e67e22; /* Highlighting the first card */
+    background-color: #fff9f0;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.food-card h3 {
+    margin-bottom: 10px;
+}
+
+.food-card p {
+    flex-grow: 1;
+    color: #555;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e67e22;
+    margin-bottom: 15px;
+}
+
+/* --- 9. Width, Height, Constraints --- */
+.about-content-box {
+    width: 100%;           /* Flexible base width */
+    max-width: 800px;      /* Cannot grow larger than this */
+    min-width: 300px;      /* Cannot shrink smaller than this */
+    height: auto;          /* Flexible height based on content */
+    min-height: 200px;     /* Minimum height constraint */
+    max-height: 2000px;    /* Maximum height constraint (generous to prevent clipping) */
+    
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* --- 10. Overflow Demo --- */
+.overflow-demo {
+    /* When content exceeds the 120px height, a scrollbar appears */
+    overflow: scroll; 
+    height: 120px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* --- 8. Margin Collapsing Demo --- */
+/* The bottom margin of collapse-1 and the top margin of collapse-2 will collapse into a single 60px margin, instead of summing to 120px */
+.margin-collapse-1 {
+    margin-bottom: 60px;
+    background-color: #e8f4f8;
+    padding: 20px;
+    text-align: center;
+    border: 1px dashed #3498db;
+}
+
+.margin-collapse-2 {
+    margin-top: 60px;
+    background-color: #f8e8e8;
+    padding: 20px;
+    text-align: center;
+    border: 1px dashed #e74c3c;
+}
+
+/* --- 2. Attribute Selector --- */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #e67e22;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2c2c2c;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #2c2c2c;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}

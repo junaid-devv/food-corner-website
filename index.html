@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Corner | Professional Dining</title>
+    
+    <!-- 1. CSS Types: External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 1. CSS Types: Internal CSS -->
+    <style>
+        /* 6. Backgrounds Demonstration */
+        #home {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #2c2c2c;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-bar">
+            <a href="#home" class="logo">Food Corner</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Welcome / Hero Section -->
+    <section id="home">
+        <div class="container">
+            <!-- 1. CSS Types: Inline CSS -->
+            <h1 style="color: #faf3e0; font-size: 4rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Welcome to Food Corner</h1>
+            
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
+                Experience the perfect blend of taste and elegance. We serve freshly prepared, mouth-watering dishes crafted with passion.
+            </p>
+            
+            <a href="#menu" class="inline-block-elem">Explore Menu</a>
+            
+            <!-- 11. Display Property: None Demo -->
+            <p class="hidden-elem">This is a hidden promo text you won't see because of display: none!</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <div class="container">
+            <!-- Section title uses ::before and ::after pseudo-elements via CSS -->
+            <h2 class="section-title">Our Signature Menu</h2>
+            <div class="menu-grid">
+                
+                <!-- Food Card 1 (Will be styled differently using :first-child pseudo-class) -->
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Margherita Pizza">
+                    <h3>Margherita Pizza</h3>
+                    <p>Hand-tossed thin crust topped with San Marzano tomato sauce, fresh mozzarella, and aromatic basil leaves.</p>
+                    <div class="price">$12.99</div>
+                    
+                    <!-- 5. Specificity Demo: The ID #specific-btn will override the .btn-override class -->
+                    <a href="#contact" class="inline-block-elem btn-override" id="specific-btn" style="text-align: center;">Order Now</a>
+                </div>
+                
+                <!-- Food Card 2 -->
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Classic Smash Burger">
+                    <h3>Classic Smash Burger</h3>
+                    <p>Double-stacked beef patties with melted cheddar, caramelized onions, pickles, and our signature sauce.</p>
+                    <div class="price">$9.99</div>
+                    <a href="#contact" class="inline-block-elem" style="text-align: center;">Order Now</a>
+                </div>
+
+                <!-- Food Card 3 -->
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&q=80" alt="Club Sandwich">
+                    <h3>Club Sandwich</h3>
+                    <p>Triple-decker loaded with roasted turkey, crispy bacon, fresh lettuce, tomato, and garlic aioli.</p>
+                    <div class="price">$8.49</div>
+                    <a href="#contact" class="inline-block-elem" style="text-align: center;">Order Now</a>
+                </div>
+
+                <!-- Food Card 4 -->
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" alt="Creamy Alfredo Pasta">
+                    <h3>Creamy Alfredo Pasta</h3>
+                    <p>Al dente fettuccine tossed in a rich, velvety parmesan cream sauce with garlic and herbs.</p>
+                    <div class="price">$11.99</div>
+                    <a href="#contact" class="inline-block-elem" style="text-align: center;">Order Now</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            
+            <!-- 9. Constraints Demo Box -->
+            <div class="about-content-box">
+                <!-- 11. Display Property: Block Demo -->
+                <h3 class="block-elem">Our Culinary Journey</h3>
+                
+                <p>
+                    At Food Corner, we believe that food is an art. 
+                    <!-- 11. Display Property: Inline Demo -->
+                    <span class="inline-elem">Established in 2024</span>, our restaurant has been serving the community with dedication and love. 
+                    We source our ingredients locally to ensure the highest quality and freshness.
+                </p>
+                
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant Interior" style="width: 100%; border-radius: 8px; margin-top: 20px;">
+                
+                <!-- 10. Overflow Demo -->
+                <div class="overflow-demo">
+                    <strong>Testimonials (Overflow scroll demonstration):</strong><br>
+                    "Best pizza in town!" - John D.<br>
+                    "I love the cozy atmosphere." - Sarah W.<br>
+                    "The Alfredo pasta is to die for." - Mike T.<br>
+                    "Friendly staff and quick service." - Emily R.<br>
+                    "Highly recommend the smash burger!" - David K.<br>
+                    "A wonderful dining experience." - Jessica L.<br>
+                    "Will definitely come back again." - Robert B.<br>
+                    "Five stars all the way!" - Alice C.
+                </div>
+                
+                <!-- 5. Cascade Demo -->
+                <p class="cascade-demo" style="margin-top: 20px; font-weight: 600;">
+                    This text color is determined by CSS Cascade!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Margin Collapsing Demo Area -->
+    <div class="container" style="padding: 40px 0;">
+        <h3 style="text-align: center;">Margin Collapsing Demonstration</h3>
+        <!-- The margin-bottom of Box 1 and margin-top of Box 2 collapse together -->
+        <div class="margin-collapse-1">
+            <strong>Box 1</strong><br>
+            margin-bottom: 60px
+        </div>
+        <div class="margin-collapse-2">
+            <strong>Box 2</strong><br>
+            margin-top: 60px<br>
+            <em>The space between these boxes is 60px, not 120px!</em>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: #faf3e0;">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-form">
+                <!-- 2. Attribute Selector is used on these inputs in CSS -->
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent!');">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    
+                    <button type="submit" class="inline-block-elem">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Food Corner. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
