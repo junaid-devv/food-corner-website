@@ -1,35 +1,46 @@
+/* ═══════════════════════════════════════════
+   Food Corner — External Stylesheet
+   ═══════════════════════════════════════════ */
+
 /* --- Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
 
-/* --- 7. Box Sizing --- */
+/* --- Box Sizing (global) --- */
 * {
-    box-sizing: border-box; /* Includes padding and border in element's total width and height */
-}
-
-/* --- 2. Element Selector & 5. Inheritance --- */
-body {
-    /* 6. Fonts */
-    font-family: 'Poppins', sans-serif; /* Inherited by child elements */
-    font-size: 16px;
-    font-weight: 400;
-    /* 6. Text */
-    line-height: 1.6;
-    
-    /* 6. Colors */
-    color: #2c2c2c; /* HEX color */
-    background-color: #faf3e0; /* HEX color */
-    
+    box-sizing: border-box; /* Includes padding and border in width/height */
     margin: 0;
     padding: 0;
 }
 
-/* --- 2. Grouping Selector --- */
-h1, h2, h3, h4 {
-    margin-top: 0;
-    color: #1a1a1a;
+/* ═══ ELEMENT SELECTOR & INHERITANCE ═══
+   Sets common font and text color on body.
+   All child elements inherit these unless overridden. */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #2c2c2c;                 /* HEX color */
+    background-color: #faf3e0;      /* HEX color */
 }
 
-/* --- 2. Class Selector --- */
+/* ═══ GROUPING SELECTOR ═══ */
+h1, h2, h3, h4 {
+    margin-top: 0;
+    color: #1a1a1a;        /* Overrides the inherited #2c2c2c — inheritance demo */
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ═══ CLASS SELECTOR ═══ */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -37,10 +48,13 @@ h1, h2, h3, h4 {
     padding: 0 20px;
 }
 
-/* --- Header & Nav --- */
+
+/* ═══════════════════════════════════════════
+   HEADER & NAVIGATION
+   ═══════════════════════════════════════════ */
 header {
-    background-color: white; /* 6. Named color */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;          /* Named color */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
     position: fixed;
     width: 100%;
     top: 0;
@@ -51,236 +65,422 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 70px;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: #e67e22; /* Warm orange */
-    text-decoration: none;
+    color: #e67e22;
+    letter-spacing: -0.5px;
 }
 
-/* --- 2. Descendant Selector --- */
+.logo:hover {
+    color: #d35400;
+}
+
+/* ═══ DESCENDANT SELECTOR ═══ */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+    gap: 32px;
 }
 
-nav a {
-    text-decoration: none; /* 6. Text decoration */
+nav ul li a {
     color: #2c2c2c;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
+    padding: 8px 0;
 }
 
-/* --- 3. Pseudo-classes (:hover) --- */
-nav a:hover {
+/* ═══ PSEUDO-CLASS: :hover ═══ */
+nav ul li a:hover {
     color: #e67e22;
 }
 
-/* --- 11. Display Properties Demonstrations --- */
-.block-elem {
-    /* Display Block: Takes full width available, starts on a new line */
-    display: block; 
-    margin-bottom: 10px;
+
+/* ═══════════════════════════════════════════
+   HERO / WELCOME SECTION
+   ═══════════════════════════════════════════ */
+.hero-content {
+    padding-top: 70px;   /* offset for fixed header */
 }
 
-.inline-elem {
-    /* Display Inline: Takes only necessary width, ignores top/bottom margins & height */
-    display: inline; 
-    font-style: italic; /* 6. Font style */
+.hero-subtitle {
+    font-size: 1.15rem;
+    max-width: 580px;
+    margin: 0 auto 35px;
+    opacity: 0.92;
+    line-height: 1.8;
 }
 
-.inline-block-elem {
-    /* Display Inline-Block: Sits inline but respects width, height, and margins */
-    display: inline-block; 
-    padding: 10px 24px;
+
+/* ═══════════════════════════════════════════
+   BUTTONS — display: inline-block
+   ═══════════════════════════════════════════ */
+.btn {
+    display: inline-block;     /* DISPLAY: inline-block */
+    padding: 12px 32px;
     background-color: #e67e22;
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
     font-weight: 600;
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
 }
 
-.inline-block-elem:hover {
+.btn:hover {
     background-color: #d35400;
+    transform: translateY(-2px);
 }
 
+/* ═══ DISPLAY: none ═══ */
 .hidden-elem {
-    /* Display None: Completely removes element from the layout flow */
-    display: none; 
+    display: none;  /* Completely hidden from layout */
 }
 
-/* --- Sections Spacing --- */
+
+/* ═══════════════════════════════════════════
+   SECTION SHARED STYLES
+   ═══════════════════════════════════════════ */
 section {
-    padding: 100px 0;
+    padding: 90px 0;
 }
 
-/* --- 2. ID Selector --- */
+.section-title {
+    text-align: center;         /* text-align */
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 50px;
+}
+
+
+/* ═══════════════════════════════════════════
+   MENU SECTION
+   ═══════════════════════════════════════════ */
+
+/* ═══ ID SELECTOR ═══ */
 #menu {
     background-color: #f5f5f5;
 }
 
-.section-title {
-    text-align: center; /* 6. Text align */
-    font-size: 36px;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-/* --- 4. Pseudo-elements (::before and ::after) --- */
-#menu h2::before {
+/* ═══ PSEUDO-ELEMENTS: ::before and ::after ═══ */
+.menu-heading::before {
     content: "🍽 ";
+}
+.menu-heading::after {
+    content: " ✦";
     color: #e67e22;
 }
-#menu h2::after {
-    content: " ★";
-    color: #e67e22;
-}
 
-/* --- 5. Cascade Demonstration --- */
-/* The second rule overrides the first because it appears later in the source code (source order) */
-.cascade-demo {
-    color: blue; /* Loses */
-}
-.cascade-demo {
-    color: #7f8c8d; /* WINS */
-}
-
-/* --- 5. Specificity Demonstration --- */
-/* The ID selector (#specific-btn) is more specific than the class selector (.btn-override) */
-.btn-override {
-    background-color: red; /* Loses */
-}
-#specific-btn {
-    background-color: rgb(230, 126, 34); /* 6. RGB Color - WINS! */
-}
-#specific-btn:hover {
-    background-color: rgb(211, 84, 0); 
-}
-
-/* --- Menu Grid --- */
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
 }
 
-/* --- 7. Box Model & 12. Borders, Shadows --- */
+/* ═══ BOX MODEL on food cards ═══
+   Content → Padding → Border → Margin */
 .food-card {
-    /* Content */
-    width: 100%;                  
-    height: 100%;                 
-    /* Padding (Space inside border) */
-    padding: 20px;                
-    /* Border */
-    border: 1px solid #ddd;       
-    border-radius: 12px;
-    /* Margin (Space outside border) */
-    margin: 0;                    
-    
+    width: 100%;
     background-color: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Shadow */
+    border: 1px solid #eee;             /* border */
+    border-radius: 14px;                /* border-radius */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);  /* box-shadow */
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
-.food-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-/* --- 3. Pseudo-classes (:first-child) --- */
-.menu-grid .food-card:first-child {
-    border: 2px solid #e67e22; /* Highlighting the first card */
-    background-color: #fff9f0;
-}
-
 .food-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-.food-card h3 {
-    margin-bottom: 10px;
+/* ═══ PSEUDO-CLASS: :first-child ═══ */
+.menu-grid .food-card:first-child {
+    border: 2px solid #e67e22;
+    background: linear-gradient(135deg, #fffaf3 0%, white 100%);
 }
 
-.food-card p {
+.card-img-wrap {
+    overflow: hidden;
+    height: 220px;
+}
+
+.card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.food-card:hover .card-img-wrap img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 22px;                   /* padding */
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
-    color: #555;
+}
+
+.card-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.card-body p {
+    color: #666;
+    font-size: 0.9rem;
+    flex-grow: 1;
+    margin-bottom: 14px;       /* margin */
+    line-height: 1.6;
 }
 
 .price {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #e67e22;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
 
-/* --- 9. Width, Height, Constraints --- */
-.about-content-box {
-    width: 100%;           /* Flexible base width */
-    max-width: 800px;      /* Cannot grow larger than this */
-    min-width: 300px;      /* Cannot shrink smaller than this */
-    height: auto;          /* Flexible height based on content */
-    min-height: 200px;     /* Minimum height constraint */
-    max-height: 2000px;    /* Maximum height constraint (generous to prevent clipping) */
-    
+.card-body .btn {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+/* ═══ SPECIFICITY DEMO ═══
+   The ID selector (#specific-btn) is more specific than the class selector (.btn-alt).
+   So #specific-btn's background wins over .btn-alt's red background. */
+.btn-alt {
+    background-color: red;                     /* LOSES — class specificity (0,1,0) */
+}
+#specific-btn {
+    background-color: rgb(230, 126, 34);       /* WINS — ID specificity (1,0,0), also RGB color */
+}
+#specific-btn:hover {
+    background-color: rgb(211, 84, 0);
+}
+
+
+/* ═══════════════════════════════════════════
+   ABOUT SECTION — side-by-side layout
+   ═══════════════════════════════════════════ */
+#about {
+    background-color: #faf3e0;
+}
+
+.about-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    /* Width/Height constraints demo */
+    width: 100%;
+    max-width: 1100px;              /* max-width constraint */
+    min-width: 300px;               /* min-width constraint */
+    min-height: 200px;              /* min-height constraint */
+    max-height: 3000px;             /* max-height constraint */
+    height: auto;                   /* height */
     margin: 0 auto;
-    background-color: white;
-    padding: 40px;
+}
+
+.about-image {
+    flex: 0 0 45%;
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    flex: 1;
+}
+
+/* ═══ DISPLAY: block ═══ */
+.block-elem {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+    color: #1a1a1a;
+}
+
+/* ═══ DISPLAY: inline ═══ */
+.inline-elem {
+    display: inline;
+    font-style: italic;    /* font-style */
+    color: #e67e22;
+    font-weight: 600;
+}
+
+.about-text p {
+    margin-bottom: 16px;
+    color: #555;
+    line-height: 1.75;
+}
+
+/* ═══ OVERFLOW DEMO — testimonials box ═══ */
+.testimonials-box {
+    overflow: scroll;                /* overflow: scroll */
+    height: 150px;
+    background-color: #f9f6f0;
+    border: 1px solid #e8e2d8;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 18px;
+    margin-top: 10px;
 }
 
-/* --- 10. Overflow Demo --- */
-.overflow-demo {
-    /* When content exceeds the 120px height, a scrollbar appears */
-    overflow: scroll; 
-    height: 120px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-top: 20px;
+.testimonials-box h4 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #e67e22;
 }
 
-/* --- 8. Margin Collapsing Demo --- */
-/* The bottom margin of collapse-1 and the top margin of collapse-2 will collapse into a single 60px margin, instead of summing to 120px */
-.margin-collapse-1 {
-    margin-bottom: 60px;
-    background-color: #e8f4f8;
-    padding: 20px;
+.testimonials-box p {
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* ═══════════════════════════════════════════
+   WHY CHOOSE US — contains margin collapsing demo
+   ═══════════════════════════════════════════ */
+#why-us {
+    background-color: #f5f5f5;
+}
+
+/* ═══ MARGIN COLLAPSING ═══
+   The bottom margin of the first .why-card (50px) and the top margin of
+   the second .why-card (50px) collapse into a single 50px gap, not 100px. */
+.why-card {
+    background-color: white;
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    margin-bottom: 50px;           /* margin-bottom for collapsing */
+    margin-top: 50px;              /* margin-top for collapsing */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-card:first-of-type {
+    margin-top: 0;
+}
+
+.why-card:last-of-type {
+    margin-bottom: 0;
+}
+
+.why-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* ═══ CASCADE DEMO (Source Order) ═══
+   Two rules with the same specificity — the later one wins. */
+.cascade-text {
+    color: blue;               /* LOSES — appears first */
+}
+.cascade-text {
+    color: #555;               /* WINS — appears later (cascade/source order) */
     text-align: center;
-    border: 1px dashed #3498db;
+    margin-top: 35px;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-.margin-collapse-2 {
-    margin-top: 60px;
-    background-color: #f8e8e8;
-    padding: 20px;
-    text-align: center;
-    border: 1px dashed #e74c3c;
+
+/* ═══════════════════════════════════════════
+   CONTACT SECTION — two-column layout
+   ═══════════════════════════════════════════ */
+#contact {
+    background-color: #faf3e0;
 }
 
-/* --- 2. Attribute Selector --- */
+.contact-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    flex: 0 0 35%;
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.contact-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    color: #e67e22;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+
+.contact-form {
+    flex: 1;
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+label {
+    display: block;             /* display: block for labels */
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2c2c2c;
+    font-size: 0.93rem;
+}
+
+/* ═══ ATTRIBUTE SELECTOR ═══ */
 input[type="text"],
 input[type="email"],
 textarea {
     width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     font-family: 'Poppins', sans-serif;
+    font-size: 0.93rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="text"]:focus,
@@ -288,33 +488,69 @@ input[type="email"]:focus,
 textarea:focus {
     outline: none;
     border-color: #e67e22;
-}
-
-label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #2c2c2c;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.12);
 }
 
 .contact-form button {
     width: 100%;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
 }
 
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
 footer {
     background-color: #2c2c2c;
     color: white;
-    text-align: center;
-    padding: 20px 0;
+    text-align: center;           /* text-align */
+    padding: 30px 0;
+}
+
+.footer-content p {
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+}
+
+.footer-tagline {
+    color: #e67e22;
+    font-size: 0.85rem;
+}
+
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — basic mobile adjustments
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        flex: none;
+        width: 100%;
+    }
+    
+    .about-image img {
+        height: 250px;
+    }
+    
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    .contact-info {
+        flex: none;
+        width: 100%;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        gap: 16px;
+    }
 }

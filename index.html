@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Corner | Professional Dining</title>
+    <title>Food Corner | Fresh & Flavorful Dining</title>
     
-    <!-- 1. CSS Types: External CSS -->
+    <!-- CSS Types: External CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- 1. CSS Types: Internal CSS -->
+    <!-- CSS Types: Internal CSS -->
     <style>
-        /* 6. Backgrounds Demonstration */
+        /* Internal CSS — Background properties demonstration */
         #home {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1920');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-color: #2c2c2c;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             text-align: center;
@@ -44,64 +44,81 @@
 
     <!-- Welcome / Hero Section -->
     <section id="home">
-        <div class="container">
-            <!-- 1. CSS Types: Inline CSS -->
-            <h1 style="color: #faf3e0; font-size: 4rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Welcome to Food Corner</h1>
+        <div class="container hero-content">
+            <!-- CSS Types: Inline CSS on this heading -->
+            <h1 style="color: #faf3e0; font-size: 3.5rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">Welcome to Food Corner</h1>
             
-            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px;">
-                Experience the perfect blend of taste and elegance. We serve freshly prepared, mouth-watering dishes crafted with passion.
+            <p class="hero-subtitle">
+                Experience the perfect blend of taste and elegance. Freshly prepared, mouth-watering dishes crafted with passion — served with love.
             </p>
             
-            <a href="#menu" class="inline-block-elem">Explore Menu</a>
+            <a href="#menu" class="btn">Explore Menu</a>
             
-            <!-- 11. Display Property: None Demo -->
-            <p class="hidden-elem">This is a hidden promo text you won't see because of display: none!</p>
+            <!-- Display: none — hidden element for CSS requirement -->
+            <p class="hidden-elem">Special 20% discount on your first order — use code WELCOME20</p>
         </div>
     </section>
 
     <!-- Menu Section -->
     <section id="menu">
         <div class="container">
-            <!-- Section title uses ::before and ::after pseudo-elements via CSS -->
-            <h2 class="section-title">Our Signature Menu</h2>
+            <!-- ::before and ::after pseudo-elements on this heading via CSS -->
+            <h2 class="section-title menu-heading">Our Signature Menu</h2>
+            <p class="section-subtitle">Handcrafted dishes made from the finest local ingredients</p>
+            
             <div class="menu-grid">
                 
-                <!-- Food Card 1 (Will be styled differently using :first-child pseudo-class) -->
+                <!-- Food Card 1 — styled differently via :first-child -->
                 <div class="food-card">
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Margherita Pizza">
-                    <h3>Margherita Pizza</h3>
-                    <p>Hand-tossed thin crust topped with San Marzano tomato sauce, fresh mozzarella, and aromatic basil leaves.</p>
-                    <div class="price">$12.99</div>
-                    
-                    <!-- 5. Specificity Demo: The ID #specific-btn will override the .btn-override class -->
-                    <a href="#contact" class="inline-block-elem btn-override" id="specific-btn" style="text-align: center;">Order Now</a>
+                    <div class="card-img-wrap">
+                        <img src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Margherita Pizza">
+                    </div>
+                    <div class="card-body">
+                        <h3>Margherita Pizza</h3>
+                        <p>Hand-tossed thin crust topped with San Marzano tomato sauce, fresh mozzarella, and aromatic basil leaves.</p>
+                        <div class="price">Rs. 2,499</div>
+                        <!-- Specificity demo: #specific-btn overrides .btn-alt -->
+                        <a href="#contact" class="btn btn-alt" id="specific-btn">Order Now</a>
+                    </div>
                 </div>
                 
                 <!-- Food Card 2 -->
                 <div class="food-card">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Classic Smash Burger">
-                    <h3>Classic Smash Burger</h3>
-                    <p>Double-stacked beef patties with melted cheddar, caramelized onions, pickles, and our signature sauce.</p>
-                    <div class="price">$9.99</div>
-                    <a href="#contact" class="inline-block-elem" style="text-align: center;">Order Now</a>
+                    <div class="card-img-wrap">
+                        <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Classic Smash Burger">
+                    </div>
+                    <div class="card-body">
+                        <h3>Classic Smash Burger</h3>
+                        <p>Double-stacked beef patties with melted cheddar, caramelized onions, pickles, and our signature sauce.</p>
+                        <div class="price">Rs. 1,899</div>
+                        <a href="#contact" class="btn">Order Now</a>
+                    </div>
                 </div>
 
                 <!-- Food Card 3 -->
                 <div class="food-card">
-                    <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?w=600&q=80" alt="Club Sandwich">
-                    <h3>Club Sandwich</h3>
-                    <p>Triple-decker loaded with roasted turkey, crispy bacon, fresh lettuce, tomato, and garlic aioli.</p>
-                    <div class="price">$8.49</div>
-                    <a href="#contact" class="inline-block-elem" style="text-align: center;">Order Now</a>
+                    <div class="card-img-wrap">
+                        <img src="https://images.pexels.com/photos/1647163/pexels-photo-1647163.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Club Sandwich">
+                    </div>
+                    <div class="card-body">
+                        <h3>Club Sandwich</h3>
+                        <p>Triple-decker loaded with roasted turkey, crispy bacon, fresh lettuce, tomato, and garlic aioli.</p>
+                        <div class="price">Rs. 1,599</div>
+                        <a href="#contact" class="btn">Order Now</a>
+                    </div>
                 </div>
 
                 <!-- Food Card 4 -->
                 <div class="food-card">
-                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=600&q=80" alt="Creamy Alfredo Pasta">
-                    <h3>Creamy Alfredo Pasta</h3>
-                    <p>Al dente fettuccine tossed in a rich, velvety parmesan cream sauce with garlic and herbs.</p>
-                    <div class="price">$11.99</div>
-                    <a href="#contact" class="inline-block-elem" style="text-align: center;">Order Now</a>
+                    <div class="card-img-wrap">
+                        <img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Creamy Alfredo Pasta">
+                    </div>
+                    <div class="card-body">
+                        <h3>Creamy Alfredo Pasta</h3>
+                        <p>Al dente fettuccine tossed in a rich, velvety parmesan cream sauce with garlic and herbs.</p>
+                        <div class="price">Rs. 2,199</div>
+                        <a href="#contact" class="btn">Order Now</a>
+                    </div>
                 </div>
                 
             </div>
@@ -112,83 +129,98 @@
     <section id="about">
         <div class="container">
             <h2 class="section-title">About Us</h2>
+            <p class="section-subtitle">Where every meal tells a story</p>
             
-            <!-- 9. Constraints Demo Box -->
-            <div class="about-content-box">
-                <!-- 11. Display Property: Block Demo -->
-                <h3 class="block-elem">Our Culinary Journey</h3>
-                
-                <p>
-                    At Food Corner, we believe that food is an art. 
-                    <!-- 11. Display Property: Inline Demo -->
-                    <span class="inline-elem">Established in 2024</span>, our restaurant has been serving the community with dedication and love. 
-                    We source our ingredients locally to ensure the highest quality and freshness.
-                </p>
-                
-                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant Interior" style="width: 100%; border-radius: 8px; margin-top: 20px;">
-                
-                <!-- 10. Overflow Demo -->
-                <div class="overflow-demo">
-                    <strong>Testimonials (Overflow scroll demonstration):</strong><br>
-                    "Best pizza in town!" - John D.<br>
-                    "I love the cozy atmosphere." - Sarah W.<br>
-                    "The Alfredo pasta is to die for." - Mike T.<br>
-                    "Friendly staff and quick service." - Emily R.<br>
-                    "Highly recommend the smash burger!" - David K.<br>
-                    "A wonderful dining experience." - Jessica L.<br>
-                    "Will definitely come back again." - Robert B.<br>
-                    "Five stars all the way!" - Alice C.
+            <!-- Width/Height constraints applied on this box via CSS -->
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Food Corner Restaurant Interior">
                 </div>
-                
-                <!-- 5. Cascade Demo -->
-                <p class="cascade-demo" style="margin-top: 20px; font-weight: 600;">
-                    This text color is determined by CSS Cascade!
-                </p>
+                <div class="about-text">
+                    <!-- Display: block demo -->
+                    <h3 class="block-elem">Our Culinary Journey</h3>
+                    <p>
+                        At Food Corner, we believe that food is an art. 
+                        <!-- Display: inline demo -->
+                        <span class="inline-elem">Established in 2024</span>, our restaurant has been serving the Islamabad community with dedication and love. We source our ingredients locally from trusted Pakistani farms to ensure the highest quality and freshness in every dish we prepare.
+                    </p>
+                    <p>
+                        Our chefs bring years of culinary expertise, blending traditional Pakistani flavors with international techniques. Whether you're craving a classic burger, a wood-fired pizza, or a comforting bowl of pasta — we've got you covered.
+                    </p>
+
+                    <!-- Overflow demo — natural-looking testimonials area -->
+                    <div class="testimonials-box">
+                        <h4>What Our Guests Say</h4>
+                        <p>"Best pizza in town! The crust is perfectly crispy." — <em>Ahmed K.</em></p>
+                        <p>"I love the cozy atmosphere and warm hospitality." — <em>Sara M.</em></p>
+                        <p>"The Alfredo pasta is absolutely divine." — <em>Usman T.</em></p>
+                        <p>"Friendly staff and incredibly quick service." — <em>Fatima R.</em></p>
+                        <p>"Highly recommend the smash burger — pure perfection!" — <em>Bilal A.</em></p>
+                        <p>"A wonderful family dining experience every time." — <em>Hira N.</em></p>
+                        <p>"Will definitely come back again and again!" — <em>Zain S.</em></p>
+                        <p>"Five stars all the way, hands down." — <em>Ayesha C.</em></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 8. Margin Collapsing Demo Area -->
-    <div class="container" style="padding: 40px 0;">
-        <h3 style="text-align: center;">Margin Collapsing Demonstration</h3>
-        <!-- The margin-bottom of Box 1 and margin-top of Box 2 collapse together -->
-        <div class="margin-collapse-1">
-            <strong>Box 1</strong><br>
-            margin-bottom: 60px
+    <!-- Why Choose Us — uses margin collapsing naturally between the two content blocks -->
+    <section id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <!-- Margin collapsing: margin-bottom of first block + margin-top of second block collapse -->
+            <div class="why-card">
+                <h3>🍳 Fresh Ingredients</h3>
+                <p>Every dish is prepared with locally sourced, farm-fresh ingredients. We never compromise on quality — from our hand-picked vegetables to our premium cuts of meat.</p>
+            </div>
+            <div class="why-card">
+                <h3>👨‍🍳 Expert Chefs</h3>
+                <p>Our team of experienced chefs combines traditional recipes with modern culinary techniques to deliver flavors that are both authentic and innovative.</p>
+            </div>
+            <!-- Cascade demo — this paragraph uses cascade/source order in CSS -->
+            <p class="cascade-text">We take pride in serving over 500 happy customers every week.</p>
         </div>
-        <div class="margin-collapse-2">
-            <strong>Box 2</strong><br>
-            margin-top: 60px<br>
-            <em>The space between these boxes is 60px, not 120px!</em>
-        </div>
-    </div>
+    </section>
 
     <!-- Contact Section -->
-    <section id="contact" style="background-color: #faf3e0;">
+    <section id="contact">
         <div class="container">
             <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-form">
-                <!-- 2. Attribute Selector is used on these inputs in CSS -->
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Message Sent!');">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                    
-                    <button type="submit" class="inline-block-elem">Send Message</button>
-                </form>
+            <p class="section-subtitle">Have a question or want to make a reservation? Drop us a message!</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Visit Us</h3>
+                    <p><strong>Address:</strong> Main GT Road, Wah Cantt, Pakistan</p>
+                    <p><strong>Phone:</strong> +92 321 1234567</p>
+                    <p><strong>Email:</strong> hello@foodcorner.pk</p>
+                    <p><strong>Hours:</strong> Mon–Sun, 11:00 AM – 11:00 PM</p>
+                </div>
+                <div class="contact-form">
+                    <!-- Attribute Selector is used on these inputs in CSS -->
+                    <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent.');">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="container footer-content">
             <p>&copy; 2026 Food Corner. All rights reserved.</p>
+            <p class="footer-tagline">Made with ❤️ in Pakistan</p>
         </div>
     </footer>
 
